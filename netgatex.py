@@ -36,7 +36,17 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 # Imports internos
 from src.core.logger import Logger
 from src.core.wifi_manager import WiFiManager
-from src.ui.dashboard import Dashboard
+# Importação condicional da interface gráfica
+ENABLE_GUI = '--no-gui' not in sys.argv
+try:
+    from src.ui.dashboard import Dashboard
+    DASHBOARD_AVAILABLE = True
+except ImportError as e:
+    print(f"Interface gráfica não disponível: {e}")
+    print("Executando em modo CLI.")
+    DASHBOARD_AVAILABLE = False
+    ENABLE_GUI = False
+
 from src.monitoring.traffic_analyzer import TrafficAnalyzer
 from src.attacks.evil_twin import EvilTwin
 from src.attacks.mitm import MITMAttack
@@ -77,9 +87,9 @@ def parse_arguments():
     """Analisa os argumentos da linha de comando."""
     parser = argparse.ArgumentParser(description='NetgateX - Ferramenta de Segurança de Redes')
     parser.add_argument('--no-gui', action='store_true', help='Executar sem interface gráfica')
+    parser.add_argument('--cli', action='store_true', help='Executar em modo linha de comando')
     parser.add_argument('--interface', type=str, help='Interface de rede a ser usada')
     parser.add_argument('--debug', action='store_true', help='Ativar modo de depuração')
-    parser.add_argument('--cli', action='store_true', help='Executar em modo linha de comando')
     
     return parser.parse_args()
 
@@ -158,12 +168,18 @@ class NetgateX:
                     sys.exit(1)
                 self.logger.info(f"Usando interface: {self.interface}")
             
-            # Em modo GUI, inicializa o dashboard
-            if not self.cli_mode:
-                self.dashboard = Dashboard(
-                    logger=self.logger, 
-                    wifi_manager=self.wifi_manager
-                )
+            # Em modo GUI, inicializa o dashboard se disponível
+            if not self.cli_mode and ENABLE_GUI and DASHBOARD_AVAILABLE:
+                try:
+                    self.dashboard = Dashboard(
+                        logger=self.logger, 
+                        wifi_manager=self.wifi_manager
+                    )
+                    self.logger.success("Dashboard inicializado com sucesso.")
+                except Exception as dashboard_error:
+                    self.logger.error(f"Erro ao inicializar o Dashboard: {dashboard_error}")
+                    self.logger.info("Alternando para modo CLI...")
+                    self.cli_mode = True
             
             self.logger.success("Componentes inicializados com sucesso.")
             
@@ -242,10 +258,11 @@ class NetgateX:
             interfaces = self.wifi_manager.get_interfaces()
             print("\nInterfaces WiFi disponíveis:")
             for i, iface in enumerate(interfaces, 1):
-                status = self.wifi_manager.get_interface_status(iface)
+                status = self.wifi_manager.get_interface_status(iface) or {}
                 connected = self.wifi_manager.get_connected_network(iface)
+                mac_info = f" - {status.get('mac', 'MAC desconhecido')}" if status.get('mac') else ""
                 network_info = f" (Conectado a: {connected['ssid']})" if connected else ""
-                print(f"  {i}. {iface} - {status['mac']}{network_info}")
+                print(f"  {i}. {iface}{mac_info}{network_info}")
             
         elif cmd == "scan":
             if not self.interface:
@@ -505,8 +522,11 @@ def main():
         interface = interfaces[0]
         logger.info(f"Usando interface padrão: {interface}")
     
-    # Se não estiver no modo GUI ou estiver em modo CLI, iniciar CLI interativo
-    if args.no_gui or args.cli:
+    # Decide o modo de execução
+    use_cli = args.no_gui or not DASHBOARD_AVAILABLE
+    
+    # Se não estiver no modo GUI, exibir informações básicas
+    if use_cli:
         print(f"[+] Interfaces disponíveis: {', '.join(interfaces)}")
         print(f"[+] Interface selecionada: {interface}")
         print("[*] Inicialização em modo CLI completa.")

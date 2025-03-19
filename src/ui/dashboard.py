@@ -18,13 +18,12 @@ from PIL import Image, ImageTk
 
 # Importa módulos internos
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
-from src.core.scanner import NetworkScanner
 from src.core.wifi_manager import WiFiManager
+from src.core.logger import Logger
 from src.monitoring.traffic_analyzer import TrafficAnalyzer
 from src.attacks.deauth import DeauthAttack
 from src.attacks.evil_twin import EvilTwin
 from src.attacks.mitm import MITMAttack
-from src.utils.logger import Logger
 from src.utils.helpers import get_wifi_interfaces, get_network_interfaces
 
 # Define tema e cores
@@ -36,12 +35,13 @@ TEXT_COLOR = '#ffffff'
 class Dashboard:
     """Classe para gerenciar a interface gráfica da ferramenta."""
     
-    def __init__(self, logger=None):
+    def __init__(self, logger=None, wifi_manager=None):
         """
         Inicializa o dashboard.
         
         Args:
             logger (Logger): Instância do logger para registrar eventos.
+            wifi_manager (WiFiManager): Instância do gerenciador WiFi.
         """
         self.logger = logger if logger else Logger(verbose=False)
         self.window = None
@@ -51,8 +51,7 @@ class Dashboard:
         self.active_attacks = {}
         
         # Objetos para funcionalidades
-        self.scanner = None
-        self.wifi_manager = WiFiManager()
+        self.wifi_manager = wifi_manager if wifi_manager else WiFiManager()
         self.traffic_analyzer = None
         
         # Guarda threads ativas

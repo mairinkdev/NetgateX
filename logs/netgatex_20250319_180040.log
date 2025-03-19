@@ -1,0 +1,9 @@
+2025-03-19 18:00:40,702 - NetgateX - INFO - NetgateX iniciado
+2025-03-19 18:00:40,713 - NetgateX - INFO - Usando interface padrão: Qualcomm QCA61x4A 802.11ac Wireless Adapter
+2025-03-19 18:00:40,715 - NetgateX - INFO - Inicializando NetgateX em modo GUI...
+2025-03-19 18:00:40,726 - NetgateX - INFO - Usando interface: Qualcomm QCA61x4A 802.11ac Wireless Adapter
+2025-03-19 18:00:41,465 - NetgateX - INFO - SUCCESS: Dashboard inicializado com sucesso.
+2025-03-19 18:00:41,466 - NetgateX - INFO - SUCCESS: Componentes inicializados com sucesso.
+2025-03-19 18:00:41,466 - NetgateX - INFO - Iniciando interface gráfica...
+2025-03-19 18:00:50,972 - NetgateX - INFO - Limpando recursos...
+2025-03-19 18:00:50,975 - NetgateX - INFO - NetgateX encerrado
