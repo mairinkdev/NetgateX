@@ -1,7 +1,5 @@
 # NetgateX - Ferramenta de Segurança de Redes
 
-![NetgateX Logo](logo.png)
-
 ## Descrição
 
 NetgateX é uma ferramenta educacional de segurança de redes desenvolvida para fins de pesquisa e testes éticos. Esta ferramenta permite monitorar, analisar e testar a segurança de redes WiFi, detectando possíveis vulnerabilidades.
