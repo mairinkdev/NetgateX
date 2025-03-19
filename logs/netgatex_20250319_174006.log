@@ -1,0 +1,5 @@
+2025-03-19 17:40:06,540 - NetgateX - INFO - NetgateX iniciado
+2025-03-19 17:40:06,555 - NetgateX - INFO - Usando interface padrão: Qualcomm QCA61x4A 802.11ac Wireless Adapter
+2025-03-19 17:40:06,558 - NetgateX - INFO - Inicializando NetgateX em modo CLI...
+2025-03-19 17:40:06,573 - NetgateX - INFO - Usando interface: Qualcomm QCA61x4A 802.11ac Wireless Adapter
+2025-03-19 17:40:06,574 - NetgateX - ERROR - Erro ao inicializar componentes: 'Logger' object has no attribute 'success'

@@ -1,0 +1,7 @@
+2025-03-19 17:44:31,454 - NetgateX - INFO - NetgateX iniciado
+2025-03-19 17:44:31,466 - NetgateX - INFO - Usando interface padrão: Qualcomm QCA61x4A 802.11ac Wireless Adapter
+2025-03-19 17:44:31,484 - NetgateX - INFO - Inicializando NetgateX em modo CLI...
+2025-03-19 17:44:31,496 - NetgateX - INFO - Usando interface: Qualcomm QCA61x4A 802.11ac Wireless Adapter
+2025-03-19 17:44:31,496 - NetgateX - INFO - SUCCESS: Componentes inicializados com sucesso.
+2025-03-19 17:44:31,497 - NetgateX - INFO - Modo CLI ativado.
+2025-03-19 17:44:31,497 - NetgateX - INFO - Digite 'help' para ver os comandos disponíveis.

@@ -1,0 +1,17 @@
+2025-03-19 17:42:34,193 - NetgateX - INFO - NetgateX iniciado
+2025-03-19 17:42:34,209 - NetgateX - INFO - Usando interface padrão: Qualcomm QCA61x4A 802.11ac Wireless Adapter
+2025-03-19 17:42:34,212 - NetgateX - INFO - Inicializando NetgateX em modo CLI...
+2025-03-19 17:42:34,224 - NetgateX - INFO - Usando interface: Qualcomm QCA61x4A 802.11ac Wireless Adapter
+2025-03-19 17:42:34,224 - NetgateX - INFO - SUCCESS: Componentes inicializados com sucesso.
+2025-03-19 17:42:34,225 - NetgateX - INFO - Modo CLI ativado.
+2025-03-19 17:42:34,226 - NetgateX - INFO - Digite 'help' para ver os comandos disponíveis.
+2025-03-19 17:42:46,804 - NetgateX - INFO - Iniciando ataque MITM na interface Qualcomm QCA61x4A 802.11ac Wireless Adapter...
+2025-03-19 17:42:46,805 - NetgateX - WARNING - Aviso: Ataques MITM têm funcionalidade limitada no Windows.
+2025-03-19 17:42:46,814 - NetgateX - ERROR - Interface Qualcomm QCA61x4A 802.11ac Wireless Adapter não encontrada.
+2025-03-19 17:42:46,815 - NetgateX - INFO - Gateway encontrado automaticamente: 192.168.15.1
+2025-03-19 17:42:46,815 - NetgateX - ERROR - Interface não configurada corretamente.
+2025-03-19 17:42:46,815 - NetgateX - INFO - Pressione Ctrl+C para parar o ataque.
+2025-03-19 17:43:37,933 - NetgateX - INFO - Sinal de interrupção recebido. Encerrando...
+2025-03-19 17:43:37,935 - NetgateX - INFO - Encerrando NetgateX...
+2025-03-19 17:43:37,935 - NetgateX - INFO - SUCCESS: NetgateX encerrado.
+2025-03-19 17:43:37,936 - NetgateX - INFO - Ataque MITM finalizado.

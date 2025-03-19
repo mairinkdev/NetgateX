@@ -1,0 +1,11 @@
+2025-03-19 17:43:42,200 - NetgateX - INFO - NetgateX iniciado
+2025-03-19 17:43:42,214 - NetgateX - INFO - Usando interface padrão: Qualcomm QCA61x4A 802.11ac Wireless Adapter
+2025-03-19 17:43:42,216 - NetgateX - INFO - Inicializando NetgateX em modo CLI...
+2025-03-19 17:43:42,231 - NetgateX - INFO - Usando interface: Qualcomm QCA61x4A 802.11ac Wireless Adapter
+2025-03-19 17:43:42,232 - NetgateX - INFO - SUCCESS: Componentes inicializados com sucesso.
+2025-03-19 17:43:42,233 - NetgateX - INFO - Modo CLI ativado.
+2025-03-19 17:43:42,233 - NetgateX - INFO - Digite 'help' para ver os comandos disponíveis.
+2025-03-19 17:44:01,780 - NetgateX - ERROR - SSID alvo é necessário.
+2025-03-19 17:44:28,005 - NetgateX - INFO - Sinal de interrupção recebido. Encerrando...
+2025-03-19 17:44:28,006 - NetgateX - INFO - Encerrando NetgateX...
+2025-03-19 17:44:28,006 - NetgateX - INFO - SUCCESS: NetgateX encerrado.

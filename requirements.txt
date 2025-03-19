@@ -1,0 +1,12 @@
+scapy>=2.4.5
+netifaces>=0.11.0
+flask>=2.0.1
+pywifi>=1.1.12
+matplotlib>=3.5.1
+PySimpleGUI>=4.60.0
+Pillow>=9.0.0
+pandas>=1.3.5
+requests>=2.27.1
+python-dateutil>=2.8.2
+colorama>=0.4.4
+pyshark>=0.4.5 
